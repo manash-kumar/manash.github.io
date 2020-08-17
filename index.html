@@ -479,7 +479,8 @@
                       </div>
                       <div class="row">
                         <div class="col">
-                          <button class="btn btn-primary" type="submit" onclick="send_mail();">Send</button>
+                          <button class="btn btn-primary" type="submit" onclick="send_mail();">Send Mail</button>
+                          <button class="btn btn-primary" type="submit" onclick="send_whatsapp();">Send Whatapp message</button>
                         </div>
                       </div>
                     </form>
@@ -525,5 +526,11 @@
     var body = $('#body').val();
     var subject = $('#subject').val();
     window.open(`mailto:1997manash.swain@gmail.com?subject=${subject}&body=${body}`);
+  }
+
+  function send_whatsapp(){
+    var body = $('#body').val();
+    var subject = $('#subject').val();
+    window.open(`https://wa.me/+917377983033?text=Hii%20Manash. I want to talk to you regarding ${body}. ${subject}`)
   }
 </script>
