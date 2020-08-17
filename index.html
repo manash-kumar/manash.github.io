@@ -459,7 +459,7 @@
                       <div class="row mb-3">
                         <div class="col">
                           <div class="input-group"><span class="input-group-addon"><i class="fa fa-file-text"></i></span>
-                            <input class="form-control" type="text" name="Subject" placeholder="Subject" required="required"/>
+                            <input class="form-control" type="text" name="Subject" placeholder="Subject" required="required" id="subject" />
                           </div>
                         </div>
                       </div>
@@ -473,13 +473,13 @@
                       <div class="row mb-3">
                         <div class="col">
                           <div class="form-group">
-                            <textarea class="form-control" name="message" placeholder="Your Message" required="required"></textarea>
+                            <textarea class="form-control" name="message" placeholder="Your Message" required="required" id="body"></textarea>
                           </div>
                         </div>
                       </div>
                       <div class="row">
                         <div class="col">
-                          <button class="btn btn-primary" type="submit">Send</button>
+                          <button class="btn btn-primary" type="submit" onclick="send_mail();">Send</button>
                         </div>
                       </div>
                     </form>
@@ -520,3 +520,10 @@
   </body>
 </html>
 <!-- window.open('mailto:test@example.com?subject=subject&body=body'); -->
+<script type="text/javascript">
+  function send_mail(){
+    var body = $('#body').val();
+    var subject = $('#subject').val();
+    window.open(`mailto:test@example.com?subject=${subject}&body=${body}`);
+  }
+</script>
